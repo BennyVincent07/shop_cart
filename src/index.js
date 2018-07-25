@@ -24,7 +24,7 @@ const Add = (productId, price, quant) => {
   count = ++Products[productId - 1].quant;
   totAmt += Products[productId - 1].price;
   //const [product] = Products.filter(({ id }) => productId === id);
-  document.getElementById("totCount").innerHTML = "Total :"+totCount;
+  document.getElementById("totCount").innerHTML = "Total :" + totCount;
   document.getElementById("quant" + productId).innerHTML = count;
 };
 const Rem = (productId, price, quant) => {
@@ -34,7 +34,7 @@ const Rem = (productId, price, quant) => {
     totAmt -= Products[productId - 1].price;
     //const [product] = Products.filter(({ id }) => productId === id);
     document.getElementById("quant" + productId).innerHTML = count;
-    document.getElementById("totCount").innerHTML = "Total :" +totCount;
+    document.getElementById("totCount").innerHTML = "Total :" + totCount;
   }
 };
 const Print = ({ id, name, price, quant }) => {
@@ -59,7 +59,7 @@ const Print = ({ id, name, price, quant }) => {
   );
 };
 const Display = ({ id, name, price, quant }) => {
-   if (quant == 0) {
+  if (quant == 0) {
     return null;
   }
   return (
@@ -73,25 +73,28 @@ const Display = ({ id, name, price, quant }) => {
 };
 const ProductList = () => (
   <React.Fragment>
-  <body >
-    <div id="div">
-    <nav className="titleNav">
-      <h1>ShopZone
-        <button className="cartBtn" onClick={goCart.bind(null)}>
-            {""}
-          </button>
-      </h1>
-      </nav>
-      <table className="tab">
-        <th>NAME</th>
-        <th>PRICE</th>
-        <th>QUANTITY</th>
-        <th>ADD</th>
-        <th>REMOVE</th>
-        <tbody>{Products.map(product => <Print {...product} />)}</tbody>
-      </table>
-      <p id="totCount" />
-    </div>
+    <body>
+      <div id="div">
+        <nav className="titleNav">
+          <h1 className="shopZone">
+            <span>S</span>hop<span>Z</span>one
+          </h1>
+          <div className="buttonDiv">
+            <button className="cartBtn" onClick={goCart.bind(null)}>
+              {""}
+            </button>
+          </div>
+        </nav>
+        <table className="tab">
+          <th>NAME</th>
+          <th>PRICE</th>
+          <th>QUANTITY</th>
+          <th>ADD</th>
+          <th>REMOVE</th>
+          <tbody>{Products.map(product => <Print {...product} />)}</tbody>
+        </table>
+        <p id="totCount" />
+      </div>
     </body>
   </React.Fragment>
 );
@@ -101,42 +104,43 @@ const goCart = () => {
   renderApp();
 };
 const CartList = () => {
-  if(totCount>0)
-  return (
-  <React.Fragment>
-    <div>
-    <nav >
-      <h1>ShopZone</h1>
-     </nav> 
-       <table className="tab">
-        <th>NAME</th>
-        <th>UNIT_PRICE</th>
-        <th>QUANTITY</th>
-        <th>PRICE</th>
-
-        <tbody>
-          {Products.map(cartProduct => <Display {...cartProduct} />)}
-        </tbody>
-      </table>
-
-      <p className="totAmt">Total= {totAmt}/-</p>
-       </div>
-  </React.Fragment>
-  );
-  else
-  {
-    return(
+  if (totCount > 0)
+    return (
       <React.Fragment>
         <div>
-        <nav>
-          <h1>ShopZone</h1>
-        </nav>  
+          <nav>
+            <h1 className="shopZone">
+              <span>S</span>hop<span>Z</span>one
+            </h1>
+          </nav>
+          <table className="tab">
+            <th>NAME</th>
+            <th>UNIT_PRICE</th>
+            <th>QUANTITY</th>
+            <th>PRICE</th>
+
+            <tbody>
+              {Products.map(cartProduct => <Display {...cartProduct} />)}
+            </tbody>
+          </table>
+
+          <p className="totAmt">Total= {totAmt}/-</p>
+        </div>
+      </React.Fragment>
+    );
+  else {
+    return (
+      <React.Fragment>
+        <div>
+          <nav>
+            <h1 className="shopZone">
+              <span>S</span>hop<span>Z</span>one
+            </h1>
+          </nav>
           <p className="noItem">....NO ITEM....</p>
-       </div>
-
-     </React.Fragment>
-    )
-
+        </div>
+      </React.Fragment>
+    );
   }
 };
 const App = () => (
@@ -149,4 +153,3 @@ const renderApp = () => {
   ReactDOM.render(<App />, rootElement);
 };
 renderApp();
-
