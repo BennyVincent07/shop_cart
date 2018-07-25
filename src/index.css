@@ -7,36 +7,58 @@ nav {
   font-size: 30px;
   width: 100%;
   margin-left: 0px;
-  
+  display: block;
 }
-nav::first-letter 
-{
+
+nav h1 {
+  width: fit-content;
+  margin-left: auto;
+  display: inline-block;
+}
+.shopZone span {
   color: red;
 }
 
+.buttonDiv {
+  float: right;
+  height: 100%;
+}
 
 .cartBtn {
-  float: right;
-  background: url("https://cdn1.iconfinder.com/data/icons/ecommerce-free/96/Cart-512.png");
-  background-size: 80px 80px;
-  height: 80px;
-  width: 80px;
+  background: url("https://cdn3.iconfinder.com/data/icons/ikooni-flat-online-shopping/128/shopping-14-512.png");
+  background-size: 100px 100px;
+  height: 100px;
+  width: 100px;
   border: none;
 }
 .tab th {
   font-size: 25px;
   color: green;
   padding: 15px;
-   
+}
+
+.add-btn:focus {
+  outline: none;
 }
 
 .add-btn {
+  border-radius: 40px;
+  background-color: rgb(87, 146, 224);
   padding: 6px 20px;
-  color: blue;
+  color: white;
+  border: none;
 }
+
+.rmv-btn:focus {
+  outline: none;
+}
+
 .rmv-btn {
-  padding: 6px 18px;
-  color: blue;
+  padding: 6px 20px;
+  color: white;
+  border-radius: 40px;
+  background-color: rgb(87, 146, 224);
+  border: none;
 }
 .tab td {
   font-size: 18px;
@@ -46,29 +68,29 @@ nav::first-letter
   width: fit-content;
   display: block;
   margin: auto;
-  background-color: rgb(188, 223, 240);
-   margin-top: 10%;
+  background-color: rgba(188, 223, 240, 0.9);
+  margin-top: 10%;
 }
-#totCount
-{
-  margin-left:800px;
-  font-size:25px;
-  color:blue;
+#totCount {
+  margin-left: 800px;
+  font-size: 25px;
+  color: blue;
+  font-weight: bold;
 }
-.totAmt
-{
-  margin-left:800px;
-  font-size:25px;
-  color:blue;
+.totAmt {
+  margin-left: 730px;
+  font-size: 25px;
+  color: blue;
+  font-weight: bold;
 }
-.noItem
-{ margin-top: 200px;
-  margin-left:550px;
-  font-size:30px;
-  color:blue;
+.noItem {
+  margin-top: 200px;
+  margin-left: 550px;
+  font-size: 30px;
+  color: blue;
+  font-weight: bold;
 }
 
 body {
-  background-color: rgb(172, 201, 240);
+  background-image: url(https://www.colourbox.com/preview/15766667-online-shopping-and-money-line-website-icons-set-circle-shaped.jpg);
 }
-
